@@ -71,3 +71,48 @@ const chenges = numbers36
   .reduce((a, b) => a + b, 0);
 
 // console.log(chenges);
+
+// 38
+
+const food = [{ type: "fruit" }, { type: "veg" }, { type: "fruit" }];
+const newFood = food.reduce((acc, item) => {
+  if (!acc[item.type]) {
+    acc[item.type] = [];
+  }
+  acc[item.type].push(item);
+
+  return acc;
+}, {});
+// console.log(newFood);
+
+// 39
+
+const arr39 = [1, 2, 2, 3, 1, 2, 4, 4, 2];
+
+const setArr39 = arr39.reduce((acc, num) => {
+  if (!acc.includes(num)) {
+    acc.push(num);
+  }
+  return acc;
+}, []);
+// console.log(setArr39);
+
+// 41
+
+const products = [
+  { name: "Laptop", price: 800, inStock: true, category: "tech" },
+  { name: "Phone", price: 400, inStock: false, category: "tech" },
+  { name: "Shirt", price: 50, inStock: true, category: "fashion" },
+  { name: "loopy", price: 140, inStock: false, category: "fashion" },
+  { name: "abu", price: 50, inStock: true, category: "fashion" },
+  { name: "Mishel", price: 500, inStock: true, category: "fashion" },
+];
+
+const filtered = products
+  .filter((product) => product.inStock)
+  .filter((product) => product.price > 100)
+  .sort((a, b) => a - b)
+  .map((product) => product.name)
+  .join(", ");
+
+console.log(filtered);
