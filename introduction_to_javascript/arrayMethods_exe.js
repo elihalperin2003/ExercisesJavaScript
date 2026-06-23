@@ -20,4 +20,12 @@ const filterAndMap = prices
   .filter((price) => price > 100)
   .map((price) => Math.round(price * 1.1));
 
-console.log(filterAndMap);
+// console.log(filterAndMap);
+
+// 10
+
+const numbers = [11, 22, 37, 42, 100];
+
+const dubble_numbers = numbers.map((num) => num * 2);
+
+// console.log(dubble_numbers);
