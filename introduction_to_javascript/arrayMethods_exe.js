@@ -29,3 +29,9 @@ const numbers = [11, 22, 37, 42, 100];
 const dubble_numbers = numbers.map((num) => num * 2);
 
 // console.log(dubble_numbers);
+
+// 12
+
+const usersAges = [21, 24, 19, 28, 22];
+const average = usersAges.reduce((a, b) => a + b) / usersAges.length;
+console.log(average);
