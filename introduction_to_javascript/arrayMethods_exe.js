@@ -61,3 +61,13 @@ const numbers32 = [
 
 const newNumbers32 = numbers32.flat();
 // console.log(newNumbers32);
+
+// 36
+
+const numbers36 = [452, 693, 214, 870, 136];
+const chenges = numbers36
+  .filter((num) => !(num % 2))
+  .map((num) => num * 2)
+  .reduce((a, b) => a + b);
+
+console.log(chenges);
