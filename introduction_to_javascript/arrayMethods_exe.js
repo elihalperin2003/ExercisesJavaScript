@@ -42,3 +42,11 @@ const numbers25 = [21, 24, 19, 28, 22];
 
 const sortedNumbers = numbers25.sort((a, b) => b - a);
 // console.log(sortedNumbers);
+
+// 29
+
+const numbers29 = [45, 69, 21, 87, 13];
+// console.log(numbers29);
+
+numbers29.splice(1, 2);
+// console.log(numbers29);
