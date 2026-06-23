@@ -34,4 +34,11 @@ const dubble_numbers = numbers.map((num) => num * 2);
 
 const usersAges = [21, 24, 19, 28, 22];
 const average = usersAges.reduce((a, b) => a + b) / usersAges.length;
-console.log(average);
+// console.log(average);
+
+// 25
+
+const numbers25 = [21, 24, 19, 28, 22];
+
+const sortedNumbers = numbers25.sort((a, b) => b - a);
+// console.log(sortedNumbers);
