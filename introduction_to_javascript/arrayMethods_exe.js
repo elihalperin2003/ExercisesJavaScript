@@ -50,3 +50,14 @@ const numbers29 = [45, 69, 21, 87, 13];
 
 numbers29.splice(1, 2);
 // console.log(numbers29);
+
+// 32
+
+const numbers32 = [
+  [45, 69],
+  [21, 87, 13],
+];
+// console.log(numbers32);
+
+const newNumbers32 = numbers32.flat();
+// console.log(newNumbers32);
