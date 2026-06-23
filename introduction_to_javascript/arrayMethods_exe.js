@@ -24,11 +24,11 @@ const filterAndMap = prices
 
 // 10
 
-const numbers = [11, 22];
+const numbers = [2, 3, 4];
 
-const dubble_numbers = numbers.reduce((a, b) => a * b);
+const mult_numbers = numbers.reduce((acc, num) => acc * num, 1);
 
-console.log(dubble_numbers);
+// console.log(mult_numbers);
 
 // 12
 
@@ -68,6 +68,6 @@ const numbers36 = [452, 693, 214, 870, 136];
 const chenges = numbers36
   .filter((num) => !(num % 2))
   .map((num) => num * 2)
-  .reduce((a, b) => a + b);
+  .reduce((a, b) => a + b, 0);
 
 // console.log(chenges);
