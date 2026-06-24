@@ -75,7 +75,7 @@ const minus10 = (prices) =>
     }),
   );
 
-// console.log(minus10(prices));
+console.log(minus10(prices));
 
 // 11
 
