@@ -1,4 +1,4 @@
-const { sub, add, greet, Obj } = require("./exports/exports.js");
+const { sub, add, greet, Obj } = require("./exportsCommonJs/exports.js");
 
 // 1
 
@@ -19,13 +19,13 @@ const { sub, add, greet, Obj } = require("./exports/exports.js");
 
 // 5
 
-const { add2, mult2, sub2 } = require("./exports/exports2.js");
+const { add2, mult2, sub2 } = require("./exportsCommonJs/exports2.js");
 
 // console.log(mult2(4, 6));
 
 // 6
 
-const { isEven } = require("./exports/exports2.js");
+const { isEven } = require("./exportsCommonJs/exports2.js");
 
 // console.log(isEven(5));
 // console.log(isEven(4));
@@ -36,18 +36,18 @@ const { isEven } = require("./exports/exports2.js");
 // לא בחומר
 
 // 8
-const { list } = require("./exports/exports2.js");
+const { list } = require("./exportsCommonJs/exports2.js");
 
 // console.log(list.reduce((acc, num) => acc + num, 0));
 
 // 9
 
-const { greet9 } = require("./exports/exports2.js");
+const { greet9 } = require("./exportsCommonJs/exports2.js");
 
 // console.log(greet9("loo"));
 
 // 10
 
-const { logger } = require("./exports/exports2.js");
+const { logger } = require("./exportsCommonJs/exports2.js");
 
 // logger();
