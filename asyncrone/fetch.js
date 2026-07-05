@@ -42,22 +42,22 @@ import fs from "fs/promises";
 
 // 4
 
-// fetch("https://jsonplaceholder.typicode.com/posts", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({
-//     title: "new title",
-//     body: "bla bla bla",
-//     userId: "1",
-//   }),
-// })
-//   .then((response) => {
-//     if (!response.ok) {
-//       throw new Error(response.status);
-//     }
-//     return response.json();
-//   })
-//   .then((response) => console.log(response));
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    title: "new title",
+    body: "bla bla bla",
+    userId: "1",
+  }),
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
+  .then((response) => console.log(response));
 
 // 5
 
@@ -107,3 +107,5 @@ Promise.all([
 ]).then((x) => console.log(x));
 
 // 8
+
+fetch("https://jsonplaceholder.typicode.com/posts");
