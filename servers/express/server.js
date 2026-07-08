@@ -21,7 +21,9 @@ async function writeUsers(users) {
 function validation(res, name, password) {
   if (!name || !password) {
     res.status(400).json({ message: "must be name and password" });
+    return true;
   }
+  return false;
 }
 // idExists
 function idExists(res, user, id) {
@@ -55,7 +57,7 @@ server.get("/api/names/:name", (req, res) => {
 // post
 server.post("/api/users", async (req, res) => {
   const { name, password } = req.body;
-  validation(res, name, password);
+  if (validation(res, name, password)) return;
   const users = await getUsers();
   const id = Math.max(0, ...users.map((user) => user.id)) + 1;
   const user = { id, name, password };
@@ -71,8 +73,16 @@ server.put("/api/users/:id", async (req, res) => {
   idExists(res, user, req.params.id);
   const { name = user.name, password = user.password } = req.body;
   Object.assign(user, { name, password });
-  writeUsers(users);
-  res.status(201).json({ message: "User updated!" });
+  await writeUsers(users);
+  res.json({ message: "User updated!" });
+});
+
+// delete
+server.delete("/api/users/:id", async (req, res) => {
+  const users = await getUsers();
+  const newUsers = users.filter((user) => user.id !== +req.params.id);
+  writeUsers(newUsers);
+  res.json({ message: "User deleted!" });
 });
 
 // listening
