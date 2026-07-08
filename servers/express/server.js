@@ -23,6 +23,12 @@ function validation(res, name, password) {
     res.status(400).json({ message: "must be name and password" });
   }
 }
+// idExists
+function idExists(res, user, id) {
+  if (!user) {
+    res.status(400).json({ message: `id ${id} Not exists` });
+  }
+}
 
 const server = express();
 
@@ -56,6 +62,17 @@ server.post("/api/users", async (req, res) => {
   users.push(user);
   await writeUsers(users);
   res.status(201).json({ message: "User created!" });
+});
+
+// put
+server.put("/api/users/:id", async (req, res) => {
+  const users = await getUsers();
+  const user = users.find((user) => user.id === +req.params.id);
+  idExists(res, user, req.params.id);
+  const { name = user.name, password = user.password } = req.body;
+  Object.assign(user, { name, password });
+  writeUsers(users);
+  res.status(201).json({ message: "User updated!" });
 });
 
 // listening
